@@ -1,0 +1,56 @@
+.select-block label,
+.input-block label,
+.textarea-block label  {
+  font-size: 1.4rem;
+  color: var(--color-text-complement)
+}
+
+.input-block input,
+.select-block select,
+.textarea-block textarea {
+  width: 100%;
+  height: 5.6rem;
+  margin-top: 0.8rem;
+  border-radius: 0.8rem;
+  background: var(--color-input-background);
+  border: 1px solid var(--color-line-in-white);
+  outline: 0;
+  padding: 0 1.6rem;
+  font: 1.6rem Archivo;
+}
+
+
+/*Referente a Biografia aqui a gente define o tamanho 
+que a label de preenchimento vai ter*/
+.textarea-block textarea {
+  padding: 1.2rem 1.6rem;
+  height: 16rem;
+/*O resize bloqueia que a label da biografia seja regulado em 360º */
+  resize: vertical; 
+}
+
+.input-block,
+.textarea-block {
+  position: relative;
+}
+
+
+/*Aqui acontece o seguinte: Quando vc seleciona uma label ela vai criar uma efeito sublinhado no local selecionado
+e quem faz isso é o FOCUS-WITHIN::AFTER*/
+.input-block:focus-within::after,
+.textarea-block:focus-within::after {
+  content: '';
+  
+  width: calc(100% - 3.2rem);
+  height: 2px;
+  background: var(--color-primary-light);
+  position: absolute;
+  left: 1.6rem;
+  bottom: 0;
+}
+
+label small{
+  font-size: 1.2rem;
+  padding-left: 1.2rem;
+  color: var(--color-small-info);
+}
